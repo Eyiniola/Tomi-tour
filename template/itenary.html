@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/itenary.css">
+    <script src="https://kit.fontawesome.com/fa0c145833.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/go.png" alt="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </nav>
+            <a href="{{ url_for('booking') }}"><button class="btn">Book Now</button></a>
+    </header>
+
+    <section class="container2">
+        <div class="gallery">
+            <div class="tour-img">
+                <img src="/static/images/olumo.jpeg" alt=" destination">
+            </div>
+            <div class="tour-text">
+                <h2>Olumo Rock</h2>
+                <p>Olumo Rock is a mountain in Abeokuta, Ogun State, Nigeria, that served as a natural fortress for the Egba people during inter-tribal wars in the 19th century. Rising about 137 meters above sea level, the rock offers panoramic views of the city. Olumo Rock features several natural caves, some of which are large enough to accommodate up to 100 people. Today, it is a popular tourist destination with facilities such as a museum, a restaurant, and an observation platform.</p>
+                <ul>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ul>
+                <h4>$200</h4>
+                    <form action="/payment" method="POST">
+                        <input type="hidden" name="items" value="price_1PcSkxDifqfBQ4vNy4LY9l3i">
+                        <input type="number" name="quantities" min="1" value="1">
+                        <button class="buy-1" type="submit">Book</button>
+                    </form>
+            </div>
+        </div>
+    </section>
+    <section class="container3">
+        <div class="gallery">
+            <div class="tour-img">
+                <img src="/static/images/niger-benue.jpeg" alt=" destination">
+            </div>
+            <div class="tour-text">
+                <h2>River Niger-Benue</h2>
+                <p> The River Niger and River Benue are the two largest rivers in Nigeria and play crucial roles in the country's geography and economy. The River Niger is the principal river of western Africa, running through several countries before entering Nigeria and flowing into the Atlantic Ocean. The River Benue is the major tributary of the Niger, joining it at Lokoja, Kogi State. The confluence of these rivers is a significant geographical landmark and supports agriculture, fishing, and transportation in the region. The rivers are also vital for hydroelectric power generation, with several dams constructed along their courses.</p>
+                <ul>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ul>
+                <h4>$200</h4>
+                <input type="hidden" name="items" value="price_1PcTvzDifqfBQ4vNFPcgFsTT">
+                <input type="number" name="quantities" min="1" value="1">
+                <button class="buy-1">Book</button>
+            </div>
+        </div>
+    </section>
+    <section class="container4">
+        <div class="gallery">
+            <div class="tour-img">
+                <img src="/static/images/zuma.jpeg" alt=" destination">
+            </div>
+            <div class="tour-text">
+                <h2>Zuma Rock</h2>
+                <p> Zuma Rock is a large monolith located in Niger State, Nigeria, just north of the capital city, Abuja. Standing at about 725 meters above its surroundings, Zuma Rock is often referred to as the "Gateway to Abuja" due to its prominent position near the main highway leading into the city. The rock is noted for its distinct shape and the human face-like features visible on its surface. Zuma Rock holds cultural significance and is an iconic symbol of Nigeria.</p>
+                <ul>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ul>
+                <h4>$200</h4>
+                    <input type="hidden" name="items" value="price_1P3bESDifqfBQ4vNNHxEBdYK">
+                    <input type="number" name="quantities" min="1" value="1">
+                <button class="buy-1">Book</button>
+            </div>
+        </div>
+    </section>
+    <section class="container5">
+        <div class="gallery">
+            <div class="tour-img">
+                <img src="/static/images/oshodi-art.jpeg" alt=" destination">
+            </div>
+            <div class="tour-text">
+                <h2>Oshodi Art Gallery</h2>
+                <p>Oshodi Art Gallery is a 10,000 square meter art gallery located in Oshodi, Lagos. It is located on the corner of Oshodi Road and Ademola Way. It was established in 2018.</p>
+                <ul>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ul>
+                <h4>$200</h4>
+                    <input type="hidden" name="items" value="price_1P3bESDifqfBQ4vNNHxEBdYK">
+                    <input type="number" name="quantities" min="1" value="1">
+                <button class="buy-1">Book</button>
+            </div>
+        </div>
+    </section>
+    <section class="container6">
+        <div class="gallery">
+            <div class="tour-img">
+                <img src="/static/images/lekki-con.jpeg" alt=" destination">
+            </div>
+            <div class="tour-text">
+                <h2>Lekki Conservation Centre</h2>
+                <p> Lekki Conservation Centre (LCC) is a nature reserve and biodiversity conservation site located in Lekki, Lagos State, Nigeria. Established by the Nigerian Conservation Foundation (NCF) in 1990, the reserve spans 78 hectares and is dedicated to preserving the unique flora and fauna of the region. The LCC is famous for its canopy walkway, the longest in Africa, offering visitors a bird’s eye view of the forest. The center is home to various wildlife, including monkeys, crocodiles, and numerous bird species, making it a key spot for eco-tourism and environmental education.</p>
+                <ul>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ul>
+                <h4>$200</h4>
+                    <input type="hidden" name="items" value="price_1PcTx3DifqfBQ4vNuVZKqZut">
+                    <input type="number" name="quantities" min="1" value="1">
+                <button class="buy-1">Book</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Our services</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Register as a guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Plan Your Trip</h4>
+                    <ul>
+                        <li><a href="itenary.html">Itineray</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="#">Accomodations</a></li>
+                        <li><a href="#">Payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

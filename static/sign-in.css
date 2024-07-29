@@ -1,0 +1,70 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+   background: #F5FFF4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.signup-container {
+    background-color: #Fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 28px rgba(0, 0, 66, 0.5);
+    max-width: 400px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+a{
+    text-decoration: none;
+    margin-top: 25px;
+    
+}
+
+button {
+    width: 80%;
+    padding: 10px;
+    background-color: #36454F;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #36454F;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+

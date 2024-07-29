@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <link rel="stylesheet" href="/static/sign-in.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/fa0c145833.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    /* Your existing CSS */
+    /* Add styles for the pop-up if needed */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    .popup.active {
+        display: block;
+    }
+    .popup .close-btn {
+        cursor: pointer;
+        color: #000;
+        font-size: 20px;
+        float: right;
+    }
+    .popup .message {
+        margin: 20px 0;
+    }
+</style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Welcome to Tomi Tour</h1>
+        <form id="signup-Form" method="post" action="tomi_db/register.php">
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="emailError"></span>   
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <span class="error" id="phoneError"></span>
+
+            <label for="date-of-birth">Date of Birth:</label>    
+            <input type="date" id="date-of-birth" name="date-of-birth" required>
+            <span class="error" id="date-of-birthError"></span>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <span class="error" id="usernameError"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span class="error" id="passwordError"></span>
+
+            <a href ="tomi-tour_login.html">Already have an account?</a>
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script src="/static/signup.js"></script>
+</body>
+<!-- Pop-up HTML -->
+<div id="popup" class="popup">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <div class="message" id="popupMessage"></div>
+  </div>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+  
+        const formData = new FormData(this);
+        fetch('Tomitour/tomi_db/register.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            const popup = document.getElementById('popup');
+            const message = document.getElementById('popupMessage');
+  
+            if (data.status === 'success') {
+                message.textContent = data.message;
+                popup.style.backgroundColor = '#d4edda'; // Green for success
+            } else {
+                message.textContent = data.message;
+                popup.style.backgroundColor = '#f8d7da'; // Red for error
+            }
+            popup.classList.add('active');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+  
+    function closePopup() {
+        document.getElementById('popup').classList.remove('active');
+    }
+  </script>
+</html>
