@@ -23,3 +23,6 @@ These cards will output different results like success, declined or requires aut
 Once that is done you can either go back to the booking page then go home or just close the app
 
 This is the link to the web app  https://tomi-tour.onrender.com
+
+
+If you want to run it locally you would run the flask application which is app.py with python app.py for windows or python3 app.py for Mac
