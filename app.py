@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='template', static_folder='static')
 
 
 
-YOUR_DOMAIN = 'http://127.0.0.1:5000'
+YOUR_DOMAIN = 'https://tomi-tour.onrender.com'
 
 
 
@@ -51,8 +51,8 @@ def payment():
         checkout_session = stripe.checkout.Session.create(
             line_items=line_items,
             mode='payment',
-            success_url= '/booking',
-            cancel_url= '/cancel.html'
+            success_url= YOUR_DOMAIN + '/booking',
+            cancel_url= YOUR_DOMAIN + '/cancel.html'
         )
     except Exception as e:
         return str(e)
