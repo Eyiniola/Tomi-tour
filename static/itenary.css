@@ -66,7 +66,7 @@ button:hover{
 }
 
 .container2, .container3, .container4, .container5, .container6{
-    margin: 80px;
+    margin: 60px;
     margin-left: 100px;
     justify-content: center;
 }
@@ -78,6 +78,7 @@ button:hover{
     border-radius: 5px;
     transition: .4s;
     width: 1200px;
+    height: 700px;
 
 }
 .gallery:hover {
@@ -99,9 +100,39 @@ button:hover{
     color: #36454F;
 }
 
+
+input[type="number"] {
+    width: 40%; 
+    padding: 10px;
+    border: 2px solid #ccc; 
+    border-radius: 50px; 
+    font-size: 16px; 
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease; 
+}
+
+
+input[type="number"]:focus {
+    border-color: #007bff; 
+    outline: none; 
+}
+
+
+input[type="number"]:disabled {
+    background-color: #e9ecef; 
+    cursor: not-allowed; 
+}
+
+
+input[type="number"]:invalid {
+    border-color: #dc3545; 
+}
+
+
 .container{
     max-width: 1170px;
     margin: auto;
+    margin-top: 60px;
 }
 .row {
     display: flex;

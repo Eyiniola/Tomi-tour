@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <link rel="icon" href="/static/images/go.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
     <link rel="stylesheet" href="/static/sign-in.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +44,7 @@
 <body>
     <div class="signup-container">
         <h1>Welcome to Tomi Tour</h1>
-        <form id="signup-Form" method="post" action="tomi_db/register.php">
+        <form id="signup-Form" method="post" action="/register">
             <label for="name">name:</label>
             <input type="text" id="name" name="name" required>
             <span class="error" id="nameError"></span>
@@ -67,6 +68,10 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <span class="error" id="passwordError"></span>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <span class="error" id="confirm-passwordError"></span>
 
             <a href ="tomi-tour_login.html">Already have an account?</a>
             <button type="submit">Sign up</button>

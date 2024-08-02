@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="icon" href="/static/images/go.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,16 +14,18 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="images/go.png" alt="logo">
+        <img class="logo" src="/static/images/japan-icon.png" alt="logo">
             <nav>
                 <ul class="nav-links">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="{{ url_for('itenary') }}">Itineray</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
+                    
                 </ul>
+               
             </nav>
-            <a href="{{ url_for('booking') }}"><button class="btn">Book Now</button></a>
+            <a href="{{ url_for('itenary') }}"><button class="btn">Book Now</button></a>
     </header>
     <section class="video-banner">
         <div class="banner-content">
@@ -31,11 +34,28 @@
             <a href="#"><button class="itn">Book Now</button></a>
         </div>
     </section>
-    
+    <section class="container1">
+        <h2>Popular Destinations</h2>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="/static/images/oshodi-art.jpeg" alt="">
+                <img id="slide-2" src="/static/images/lekki-con.jpeg" alt="">
+                <img id="slide-3" src="/static/images/olumo.jpeg" alt="">
+                <img id="slide-4" src="/static/images/yankari.jpeg" alt="">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+            </div>
+        </div>
+    </section>
     <section class="container2">
+        <h2>Popular Guides</h2>
         <div class="gallery">
             <div class="product-display">
-                <img src="/static/images/yankari.jpeg" alt=" destination">
+                <img src="/static/images/guide-1.jpeg" alt=" destination">
                 <h5>Guide</h5>
                 <h3>Friday Adeyemi</h3>
                 <h5>I'm a guide with over a hundred trips under my belt. <br>Also proudly the best guide of the month</h5>
@@ -50,7 +70,7 @@
                 <button class="buy-1">Book</button>
             </div>
             <div class="product-display">
-                <img src="/static/images/yankari.jpeg" alt=" destination">
+                <img src="/static/images/guide-3.jpeg" alt=" destination">
                 <h5>Guide</h5>
                 <h3>Friday Adeyemi</h3>
                 <h5>I'm a guide with over a hundred trips under my belt. <br>Also proudly the best guide of the month</h5>
@@ -65,7 +85,7 @@
                 <button class="buy-1">Book</button>
             </div>
             <div class="product-display">
-                <img src="/static/images/yankari.jpeg" alt=" destination">
+                <img src="/static/images/guide-2.jpeg" alt=" destination">
                 <h5>Guide</h5>
                 <h3>Friday Adeyemi</h3>
                 <h5>I'm a guide with over a hundred trips under my belt. <br>Also proudly the best guide of the month</h5>
@@ -84,7 +104,7 @@
     <section class="container3">
         <div class="gallery">
             <div class="product-display">
-                <img src="/static/images/yankari.jpeg" alt=" destination">
+                <img src="/static/images/guide-4.jpeg" alt=" destination">
                 <h5>Guide</h5>
                 <h3>Friday Adeyemi</h3>
                 <h5>I'm a guide with over a hundred trips under my belt. <br>Also proudly the best guide of the month</h5>
@@ -99,7 +119,7 @@
                 <button class="buy-1">Book</button>
             </div>
             <div class="product-display">
-                <img src="/static/images/yankari.jpeg" alt=" destination">
+                <img src="/static/images/guide-3.jpeg" alt=" destination">
                 <h5>Guide</h5>
                 <h3>Friday Adeyemi</h3>
                 <h5>I'm a guide with over a hundred trips under my belt. <br>Also proudly the best guide of the month</h5>
@@ -114,7 +134,7 @@
                 <button class="buy-1">Book</button>
             </div>
             <div class="product-display">
-                <img src="/static/images/yankari.jpeg" alt=" destination">
+                <img src="/static/images/guide-1.jpeg" alt=" destination">
                 <h5>Guide</h5>
                 <h3>Friday Adeyemi</h3>
                 <h5>I'm a guide with over a hundred trips under my belt. <br>Also proudly the best guide of the month</h5>
@@ -129,6 +149,10 @@
                 <button class="buy-1">Book</button>
             </div>
         </div>
+    </section>
+    <section class="maps">
+        <h2>Maps</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2669651.202893949!2d7.20056746972142!3d9.285964445160563!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf7da48d0d%3A0x99a8fe4168c50bc8!2sNigeria!5e0!3m2!1sen!2srw!4v1722336730037!5m2!1sen!2srw" width="800" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     <footer class="footer">
         <div class="container">
@@ -145,8 +169,8 @@
                 <div class="footer-col">
                     <h4>Plan Your Trip</h4>
                     <ul>
-                        <li><a href="itenary.html">Itineray</a></li>
-                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="{{url_for('itenary')}}">Itineray</a></li>
+                        <li><a href="{{url_for('booking')}}">Booking</a></li>
                         <li><a href="#">Accomodations</a></li>
                         <li><a href="#">Payment options</a></li>
                     </ul>
